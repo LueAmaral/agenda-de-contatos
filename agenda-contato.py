@@ -1,3 +1,10 @@
+"""
+Desenvolvido por:
+Lue Rodrigues do Amaral
+Ygor Samuel Nanes de Oliveira
+Ultima modificação: 07/12/2023
+"""
+
 def menu(): # função para exibir o menu principal
     print("=" * 45)
     print("=         MINHA AGENDA DE CONTATOS          =")
@@ -13,32 +20,6 @@ def menu(): # função para exibir o menu principal
     opcao = int(input("Escolha a opção: "))
     print("=" * 45)
     return opcao
-
-
-
-def excluir_contato(aux_remove):
-    if aux_remove in codigo:
-        deletar = codigo.index(aux_remove)
-        del(codigo[deletar])
-        del(nome[deletar])
-        del(telefone[deletar])
-        print("*" * 45)
-        print(f"Sucesso!")
-        print("*" * 45)
-    else:
-        print("*" * 45)
-        print(f"Erro! não foi possivel remover o contato!")
-        print("*" * 45)
-
-def list_por_cod(aux_list_cod):
-    if aux_list_cod in codigo:
-        list_cod = codigo.index(aux_list_cod)
-        print(f"Codigo do Contato: {codigo[list_cod]}")
-        print(f"Nome do Contato: {nome[list_cod]}")
-        print(f"Telefone do Contato: {telefone[list_cod]}")
-    else:
-        print(f"Erro! Não foi possivel listar Os contatos!")
-        print("*" * 45)
 
 def novo_contato(aux_codigo): # função para cadastrar novo contato
 
@@ -87,7 +68,19 @@ def alterar_contato(aux_codigo): # função para alterar contato
         print(f"Contato com o Código {aux_codigo} não cadastrado e não pode ser alterado.")
         print("*" * 45)
 
-# def excluir_contato(): # função para excluir contato
+def excluir_contato(aux_remove):
+    if aux_remove in codigo:
+        deletar = codigo.index(aux_remove)
+        del(codigo[deletar])
+        del(nome[deletar])
+        del(telefone[deletar])
+        print("*" * 45)
+        print(f"Sucesso!")
+        print("*" * 45)
+    else:
+        print("*" * 45)
+        print(f"Erro! não foi possivel remover o contato!")
+        print("*" * 45)
 
 def listar_todos_contatos(): # função para listar todos os contatos
     print("*" * 45)
@@ -108,6 +101,16 @@ def listar_todos_contatos(): # função para listar todos os contatos
             print(f"NOME do Contato    : {nome[i]}")
             print(f"TELEFONE do Contato: {telefone[i]}")
             print("*" * 45)
+
+def list_por_cod(aux_list_cod):
+    if aux_list_cod in codigo:
+        list_cod = codigo.index(aux_list_cod)
+        print(f"Codigo do Contato: {codigo[list_cod]}")
+        print(f"Nome do Contato: {nome[list_cod]}")
+        print(f"Telefone do Contato: {telefone[list_cod]}")
+    else:
+        print(f"Erro! Não foi possivel listar Os contatos!")
+        print("*" * 45)
 
 def list_por_nome(aux_list_name):
     if aux_list_name in nome:
