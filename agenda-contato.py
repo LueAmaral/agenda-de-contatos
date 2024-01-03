@@ -73,7 +73,22 @@ while continuar:
                 print("*********************************************")
 
         case 3: # excluir contato
-            print()
+            print('*********************************************')
+            print("Excluir Contato")
+            print('*********************************************')
+            aux_remove = int(input(f'informe o Codigo do Contato a ser removido: '))
+            if aux_remove in codigo:
+                deletar = codigo.index(aux_remove)
+                del(codigo[deletar])
+                del(nome[deletar])
+                del(telefone[deletar])
+                print('*********************************************')
+                print(f"Sucesso!")
+                print('*********************************************')
+            else:
+                print('*********************************************')
+                print(f"Erro! não foi possivel remover o contato!")
+                print('*********************************************')
 
         case 4: # listar todos os contatos
             print("*********************************************")
@@ -93,10 +108,33 @@ while continuar:
                     print("*********************************************")
 
         case 5: # listar por código do contato
-            print()
-
+            print("*********************************************")
+            print(f"Listar por Codigo do contato")
+            print("*********************************************")
+            aux_list_cod = int(input(f"Informe O Codigo do contato: "))
+            print("*********************************************")
+            if aux_list_cod in codigo:
+                list_cod = codigo.index(aux_list_cod)
+                print(f"Codigo do Contato: {codigo[list_cod]}")
+                print(f"Nome do Contato: {nome[list_cod]}")
+                print(f"Telefone do Contato: {telefone[list_cod]}")
+            else:
+                print(f"Erro! Não foi possivel listar Os contatos!")
+                print("*********************************************")
         case 6: # listar por nome do contato
-            print()
+            print("*********************************************")
+            print(f"Listar Por Nome do contato")
+            print("*********************************************")
+            aux_list_name = input(f"informe o Nome do Contato: ")
+            print("*********************************************")
+            if aux_list_name in nome:
+                list_name = nome.index(aux_list_name)
+                print(f"Codigo do Contato: {codigo[list_name]}")
+                print(f"Nome do Contato: {nome[list_name]}")
+                print(f"Telefone do Contato: {telefone[list_name]}")
+            else:
+                print(f"Erro! Não foi possivel listar Os contatos!")
+            print("*********************************************")
 
         case 7:
             continuar = False
